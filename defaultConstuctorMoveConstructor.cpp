@@ -97,7 +97,7 @@ class B{
     
 };
 
-
+//with move consturctor and move assigntment operator
 class A{
     int x;
     int *p;
