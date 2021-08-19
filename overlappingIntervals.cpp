@@ -15,6 +15,11 @@ int main()
     int startTime = 0;
     int maxEmployee = 0;
 
+    //the time intervals are: 1-5 with 3 empolyess, 3-7 with 4, 11-17 with 3, 15-20 with 2 and 35-40 with 7
+    // it is needed to calculate the maximum amount of employess needed in any interval
+    // 3-5 would need 7 employees
+    // 15-17 4 employees 
+    //35- 40 7 employees
     start.push_back({1,3});
     start.push_back({3,4});
     start.push_back({15,2});
@@ -26,7 +31,7 @@ int main()
     end.push_back({20,2});
     end.push_back({17,3});
     end.push_back({40,7});
-
+    //sort start and end times 
     sort(start.begin(),start.end());
     sort(end.begin(),end.end());
 
