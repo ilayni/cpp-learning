@@ -35,34 +35,37 @@ int main()
         //cout<< i.first << i.second << endl;
     }
 
-    int i,j=1;
-    for(i=0;i<start.size();i++)
+    int i,j=0;
+    for(i=0;i<end.size();i++)
     {
-        cout<<"start[i].first " << start[i].first << endl;
-        if(start[i].first<end[j].first)
+        cout<<"end[i].first " << end[i].first << endl;
+        //go over according to ending times
+        while(start[j].first<end[i].first && j<end.size() )
         {
-            cout<<"start[i].first " << start[i].first << endl;
-            startTime = start[i].first;
-            maxEmployee+=start[i].second;
+            cout<<"start[i].first " << start[j].first << endl;
+            startTime = start[j].first;
+            maxEmployee+=start[j].second;
             curIntervals.push(start[i]) ;
+            j++;
         }
-        else
+       // else // closing an interval,
         {
             pair<int,int> temp;
             cout<<"strat time " << startTime <<endl;
             cout<<"max before " << maxEmployee << endl;
             temp = curIntervals.top();
             curIntervals.pop();
-            for(int l=0;l<=i;l++) 
+            maxEmployee-=end[i].second;
+         /*    for(int l=0;l<=i;l++) 
             {          
                if(end[j].first>end[l].first)
                {
                     cout<< "end[j].first" << end[j].first <<"end[l].first" <<end[l].first << endl;
                     maxEmployee-=start[l].second;
                }
-            }
+            } */
             cout<<"max after " << maxEmployee << endl;
-            j++;
+            
         }
     }
 
