@@ -32,10 +32,4 @@ vecotr<char> decToRoman(int decimal)
     curfig = decimal/1000;
     curString = convertToThousands[curfig-1];
     tempNum = tempNum - curfig*1000;
-
-
-
-
-
-
 }
